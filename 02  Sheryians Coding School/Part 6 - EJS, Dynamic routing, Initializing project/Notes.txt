@@ -1,0 +1,16 @@
+1.) Initialize a project with npm. (npm init -y)
+2.) express install. (npm i express)
+
+#. setting up parsers for from.
+
+#. setting up ejs for ejs pages. 
+      -> install ejs from npm. ( npm i ejs)
+      -> setup ejs as a view engine.
+
+#. setting up public static files.
+
+#. dynamic routing 
+    -> dynamic routing.
+            -> url ko agar dynamic banaana hai to realise karo konsa part dynamic hai aur us part ke aage route me : laga do
+    -> how to get data coming from frontend at backend route.
+
