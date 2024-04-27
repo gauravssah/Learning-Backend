@@ -15,6 +15,18 @@ app.get('/', function (req, res) {
 });
 
 
+app.post('/create', function (req, res) {
+    fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`, req.body.details, function (err) {
+        if (err) {
+            console.error(err);
+            res.status(500).send("Failed to create file.");
+        } else {
+            res.redirect("/");
+        }
+    });
+});
+
+
 app.get('/file/:filename', function (req, res) {
     fs.readFile(`./files/${req.params.filename}`, "utf-8", function (err, fileData) {
         if (err) {
@@ -32,14 +44,13 @@ app.get('/file/:filename', function (req, res) {
 });
 
 
-app.post('/create', function (req, res) {
-    fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`, req.body.details, function (err) {
-        if (err) {
-            console.error(err);
-            res.status(500).send("Failed to create file.");
-        } else {
-            res.redirect("/");
-        }
+app.get('/edit/:filename', function (req, res) {
+    res.render('edit', { previousName: req.params.filename });
+});
+
+app.post('/edit', function (req, res) {
+    fs.rename(`./files/${req.body.previous}`, `./files/${req.body.new}`, (err) => {
+        res.redirect("/");
     });
 });
 
