@@ -14,6 +14,24 @@ app.get('/', function (req, res) {
     })
 });
 
+
+app.get('/file/:filename', function (req, res) {
+    fs.readFile(`./files/${req.params.filename}`, "utf-8", function (err, fileData) {
+        if (err) {
+            // Handle error, for example, send a 404 response
+            res.status(404).send("File not found");
+            return;
+        }
+
+        // Remove file extension from filename
+        let filenameWithoutExtension = req.params.filename.replace(/\.[^/.]+$/, "");
+
+        // Render the 'show' template with filenameWithoutExtension and fileData
+        res.render('show', { filename: filenameWithoutExtension, fileData: fileData });
+    });
+});
+
+
 app.post('/create', function (req, res) {
     fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`, req.body.details, function (err) {
         if (err) {
