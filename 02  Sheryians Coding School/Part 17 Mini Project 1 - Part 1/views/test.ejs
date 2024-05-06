@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900">
+
+    <div class="flex flex-col justify-center items-center h-screen ">
+        <h2 class="text-3xl font-bold text-white mb-6">Upload File</h2>
+
+        <form action="/upload" method="post" class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md"
+            enctype="multipart/form-data">
+
+            <input type="file" name="image">
+            <br>
+            <br>
+            <input class="px-5 py-2 rounded-md bg-blue-500" type="submit" value="Upload now">
+
+        </form>
+
+
+
+    </div>
+
+</body>
+
+</html>

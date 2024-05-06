@@ -5,17 +5,59 @@ const postModel = require("./models/post");
 const cookieParser = require("cookie-parser");
 const bcrypt = require('bcryptjs');
 const jwt = require("jsonwebtoken");
-const { render } = require("ejs");
+const path = require("path");
+const multer = require("multer");
 
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+const crypto = require("crypto");
+
+
+// -----------#####--start--#########-------------
+
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './public/images/uploads');
+    },
+    filename: function (req, file, cb) {
+        crypto.randomBytes(12, function (err, bytes) {
+            const fn = bytes.toString("hex") + path.extname(file.originalname);
+            cb(null, fn);
+        });
+    }
+});
+
+
+const upload = multer({ storage: storage })
+
+
+
+
+// -----------#####--end--#########-------------
 
 
 app.get("/", (req, res) => {
     res.render("index");
 });
+
+// -----------#####--start--#########-------------
+
+app.get("/test", (req, res) => {
+    res.render("test");
+
+});
+
+app.post("/upload", upload.single("image"), (req, res) => {
+    console.log(req.file);
+
+});
+
+
+
+// -----------#####--end--#########-------------
 
 app.post("/register", async (req, res) => {
     let { email, password, username, name, age } = req.body;
