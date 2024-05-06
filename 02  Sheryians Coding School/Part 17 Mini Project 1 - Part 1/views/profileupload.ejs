@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Profile Picture</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-900">
+
+    <div class="flex flex-col justify-center items-center h-screen">
+        <h2 class="text-3xl font-bold text-white mb-8">Upload Profile Picture</h2>
+
+        <form action="/upload" method="post" class="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md"
+            enctype="multipart/form-data">
+
+            <label for="image" class="text-gray-300 font-medium mb-2">Select an image:</label>
+            <input type="file" id="image" name="image" accept="image/*"
+                class="block w-full px-4 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-600">
+
+            <button type="submit"
+                class="mt-6 w-full px-4 py-2 rounded-md bg-blue-500 text-white font-semibold hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                Upload Now
+            </button>
+        </form>
+    </div>
+
+</body>
+
+</html>
