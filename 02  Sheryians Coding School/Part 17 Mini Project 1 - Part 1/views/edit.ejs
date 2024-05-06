@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-900 text-white">
+
+    <!-- <div class="container mx-auto px-4 py-8 flex justify-between items-center">
+        <h2 class="text-3xl font-bold mb-6">Your Profile</h2>
+        <a href="/logout"
+            class="px-4 py-2 bg-red-500 text-white font-semibold rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600">Logout</a>
+    </div> -->
+
+    <div class="container mx-auto px-4 m-4">
+
+
+        <h5 class="text-lg mb-2">Edit Your Post</h5>
+        <form action="/update/<%= post._id  %>" method="post" class="mb-8">
+            <textarea
+                class="w-1/2 px-3 py-2 rounded-md border bg-gray-800 resize-none border-gray-300 focus:outline-none focus:border-blue-500 text-gray-200"
+                name="content" placeholder="What's on Your Mind"><%= post.content  %></textarea>
+            <input
+                class="block cursor-pointer px-4 py-2 bg-yellow-500 text-white font-semibold rounded-md mt-4 hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600"
+                type="submit" value="Update Now">
+        </form>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
