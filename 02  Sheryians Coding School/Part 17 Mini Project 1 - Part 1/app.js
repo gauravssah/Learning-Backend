@@ -39,7 +39,7 @@ app.post("/upload", isLoggedIn, upload.single("image"), async (req, res) => {
 app.post("/register", async (req, res) => {
     let { email, password, username, name, age } = req.body;
     let user = await userModel.findOne({ email });
-    if (user) return res.status(500).send("User already registered");
+    if (user) return res.status(500).render("alreadyregistered");
 
     bcrypt.genSalt(10, (err, salt) => {
 
@@ -152,20 +152,6 @@ function isLoggedIn(req, res, next) {
             return res.send("Invalid token. Please log in again.");
         }
     }
-
-
-
-
-
-    // --------------------------------------------
-
-    // if (req.cookie.token === "") res.send("You must be logged in");
-    // else {
-    //     let data = jwt.verify(req.cookie.token, "shhhh");
-    //     req.user = data;
-    //     next();
-    // }
-
 }
 
 
