@@ -3,7 +3,7 @@ import { ApiError } from "../utils/ApiError.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import jwt from "jsonwebtoken";
 
-export const verifyJWT = asyncHandler(async (req, res, next) => {
+const verifyJWT = asyncHandler(async (req, res, next) => {
 
     try {
         const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
@@ -14,7 +14,7 @@ export const verifyJWT = asyncHandler(async (req, res, next) => {
 
         const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
 
-        const user = await User.findOne(decodedToken?._id).select("-password -refreshToken");
+        const user = await User.findById(decodedToken?._id).select("-password -refreshToken");
 
         if (!user) {
             // TODO : Discuss about frontend in future
@@ -31,3 +31,5 @@ export const verifyJWT = asyncHandler(async (req, res, next) => {
     }
 
 });
+
+export { verifyJWT }
