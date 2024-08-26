@@ -7,6 +7,7 @@ app.get('/', (req, res) => {
 
     // This is request comming from client, or browser.
     console.log(req);
+
     // console.log(req.body);
     // console.log(req.cookies);
     // console.log(req.query);
