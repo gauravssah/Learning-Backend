@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khata Book</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-900">
+
+    <nav class=" flex items-center  justify-between bg-gray-800 text-white font-bold text-2xl px-3 py-2 mb-3">
+        <div>
+            <h1><a href="/">Khata Book</a></h1>
+        </div>
+
+        <div>
+            <a class="text-xl" href="/create">Create New</a>
+        </div>
+
+    </nav>
+
+    <div class="text-white m-5 flex flex-col gap-4">
+
+
+        <% files.forEach((file)=> { %>
+            <div class="bg-orange-500 flex items-center justify-between px-3 py-2 font-bold rounded">
+                <p>
+                    <%= file %>
+                </p> <!-- Output the file name -->
+                <div class="flex gap-3">
+                    <p class="cursor-pointer"><a href="./view/<%= file %>">view</a></p>
+                    <p class="cursor-pointer"><a href="./edit/<%= file %>">Edit</a></p>
+                    <p class="cursor-pointer"><a href="./delete/<%= file %>">Delete</a></p>
+                </div>
+            </div>
+            <% }); %>
+    </div>
+
+</body>
+
+</html>

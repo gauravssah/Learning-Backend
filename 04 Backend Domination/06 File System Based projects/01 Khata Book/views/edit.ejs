@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khata Book</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-900">
+
+    <nav class=" flex items-center  justify-between bg-gray-800 text-white font-bold text-2xl px-3 py-2 mb-3">
+        <div>
+            <h1><a href="/">Khata Book</a></h1>
+        </div>
+
+        <div>
+            <a class="text-xl" href="/create">Create New</a>
+        </div>
+
+    </nav>
+
+    <div class="text-white m-5 flex flex-col gap-4">
+
+
+
+        <form action="/update/<%= file %>" method="POST">
+            <textarea class="p-5 bg-gray-600 border-2 text-white border-black" name="text" id="text" cols="100"
+                rows="10"><%= data %></textarea>
+            <br><br>
+            <button class="bg-orange-500 text-white px-3 py-2 rounded" type="submit">Submit</button>
+        </form>
+
+
+    </div>
+
+</body>
+
+</html>
