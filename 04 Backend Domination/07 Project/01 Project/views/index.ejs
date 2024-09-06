@@ -4,11 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/faa88aff29.js" crossorigin="anonymous"></script>
+    <title>Welcome to KhataBook</title>
 </head>
 
 <body>
-    <h1>Hello Gaurav</h1>
+
+    <nav class="flex justify-between items-center bg-slate-800 px-4 py-3 text-white font-bold">
+
+        <h1 class="text-2xl cursor-pointer"><a href="/">KhataBook</a></h1>
+
+        <ul class="flex gap-3 ">
+            <li class="hover:text-slate-300"><a href="/">Home</a></li>
+            <li class="hover:text-slate-300"><a href="./create">Create</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="text-3xl font-bold m-3 ">All Transactions</h1>
+
+
+    <div class="flex flex-col gap-3 m-3 w-[90%] ">
+
+        <% if(files.length> 0){ %>
+            <% files.forEach(file=> { %>
+                <div class="bg-gray-300 px-3 py-2 rounded flex justify-between w-[35%]">
+
+                    <p class="text-xl font-bold">
+
+                        <% const filetitle=file.split(".")[0] %>
+
+
+                            <%= filetitle %>
+
+                                <i
+                                    class="fa-solid fa-arrow-right text-sm ml-3 cursor-pointer bg-slate-800 text-white px-2 py-1 rounded-full hover:bg-slate-600">
+                                </i>
+
+                    </p>
+
+                    <div class="flex gap-3 items-center justify-between">
+                        <i class=" hover:text-blue-500 fa-solid fa-pen cursor-pointer"></i>
+                        <i class=" hover:text-red-500 fa-solid fa-trash cursor-pointer"></i>
+                    </div>
+
+                </div>
+
+                <% }) %>
+                    <% } else { %>
+                        <h3 class="text-zinc-500">Currently Nothing to show..</h3>
+                        <% } %>
+
+    </div>
+
+
+
+
+
+
+
+
 </body>
 
 </html>
