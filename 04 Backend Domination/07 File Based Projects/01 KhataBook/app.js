@@ -61,9 +61,7 @@ app.get('/delete/:file', (req, res) => {
 });
 
 // view a hisaab
-
 app.get('/hisaab/:fileName', (req, res) => {
-    // res.render('hisaab', { fileName: req.params.fileName, content: '' });
 
     fs.readFile(`./hisaab/${req.params.fileName}`, 'utf8', (err, data) => {
         if (err) return res.status(500).send("Error reading the file");
@@ -73,7 +71,6 @@ app.get('/hisaab/:fileName', (req, res) => {
 });
 
 // update a hisaab
-
 app.post('/update/:fileName', (req, res) => {
     const fileName = req.params.fileName;
     const { content, title } = req.body;  // Now 'content' will have the correct value
@@ -87,8 +84,6 @@ app.post('/update/:fileName', (req, res) => {
         res.redirect('/');
     });
 });
-
-
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);

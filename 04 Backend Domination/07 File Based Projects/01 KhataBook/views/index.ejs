@@ -21,14 +21,16 @@
         </ul>
     </nav>
 
-    <h1 class="text-3xl font-bold m-3 ">All Transactions</h1>
+    <h1 class="text-3xl font-bold m-3 ">All Hisaabs</h1>
 
 
-    <div class="flex flex-col gap-3 m-3 w-[90%] ">
+    <div class="flex flex-col gap-3 m-3 sm:w-[90%] ">
 
         <% if(files.length> 0){ %>
             <% files.forEach(file=> { %>
-                <div class="bg-gray-300 px-3 py-2 rounded flex justify-between ">
+                <div class="bg-gray-300 gap-3 py-2 px-2 flex items-center justify-between ">
+
+                    <!-- title -->
 
                     <p class="text-xl font-bold">
 
@@ -45,6 +47,8 @@
                                 </a>
                     </p>
 
+
+                    <!-- edit and delete -->
                     <div class="flex gap-3 items-center justify-between">
                         <a href="/edit/<%= file %>">
                             <i
