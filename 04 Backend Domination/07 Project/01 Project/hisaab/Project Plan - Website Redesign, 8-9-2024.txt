@@ -1,0 +1,15 @@
+Project Plan for Website Redesign:
+1. Requirements Gathering:
+   - Deadline: October 15, 2024
+   - Stakeholders: Design Team, Marketing Team
+
+2. Design Phase:
+   - Deadline: November 15, 2024
+   - Deliverables: Wireframes, Mockups
+
+3. Development Phase:
+   - Deadline: January 15, 2025
+   - Deliverables: Functional Website, User Testing
+
+4. Launch:
+   - Date: February 1, 2025
