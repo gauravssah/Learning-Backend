@@ -1,0 +1,65 @@
+MongoDB Operators and Their Meanings
+
+1. eq (Equal)
+- Meaning: Checks if the value of a field is equal to the specified value.
+- Example: `{ "age": { "$eq": 25 } }` checks if the `age` field is exactly 25.
+
+---
+2. ne (Not Equal)
+- Meaning: Checks if the value of a field is not equal to the specified value.
+- Example: `{ "age": { "$ne": 25 } }` finds documents where the `age` field is not 25.
+
+---
+3. lt (Less Than)
+- Meaning: Checks if the value of a field is less than the specified value.
+- Example: `{ "price": { "$lt": 100 } }` finds documents where `price` is less than 100.
+
+---
+4. lte (Less Than or Equal)
+- Meaning: Checks if the value of a field is less than or equal to the specified value.
+- Example: `{ "price": { "$lte": 100 } }` finds documents where `price` is less than or equal to 100.
+
+---
+5. gt (Greater Than)
+- Meaning: Checks if the value of a field is greater than the specified value.
+- Example: `{ "age": { "$gt": 18 } }` finds documents where `age` is greater than 18.
+
+---
+6. gte (Greater Than or Equal)
+- Meaning: Checks if the value of a field is greater than or equal to the specified value.
+- Example: `{ "age": { "$gte": 18 } }` finds documents where `age` is greater than or equal to 18.
+
+---
+7. in (In)
+- Meaning: Checks if the value of a field is in the given array of values.
+- Example: `{ "status": { "$in": ["active", "pending"] } }` finds documents where `status` is either active or pending.
+
+---
+8. nin (Not In)
+- Meaning: Checks if the value of a field is not in the given array of values.
+- Example: `{ "status": { "$nin": ["inactive", "suspended"] } }` finds documents where `status` is neither inactive nor suspended.
+
+---
+9. exists (Exists)
+- Meaning: Checks if a field exists or not in the document.
+- Example: `{ "middle_name": { "$exists": true } }` finds documents where the field `middle_name` exists.
+
+---
+10. or (Logical OR)
+- Meaning: Combines multiple conditions where at least one condition must be true.
+- Example: `{ "$or": [{ "age": { "$lt": 18 } }, { "age": { "$gt": 65 } }] }` finds documents where age is less than 18 or greater than 65.
+
+---
+11. size (Array Size)
+- Meaning: Checks if an array field has a specific number of elements.
+- Example: `{ "tags": { "$size": 3 } }` finds documents where the `tags` array has exactly 3 elements.
+
+---
+12. regex (Regular Expression)
+- Meaning: Searches for a pattern in a string field.
+- Example: `{ "name": { "$regex": "^John" } }` finds documents where `name` starts with John.
+
+---
+This content explains the MongoDB operators commonly used for querying documents and creating filters in databases.
+
+
