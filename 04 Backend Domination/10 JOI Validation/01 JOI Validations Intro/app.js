@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
-const { validateModel, userModel } = require('./models/user-model');
+// const { validateModel, userModel } = require('./models/user-model');
+const { validateModel, userModel } = require('./models/02_user_model_using_phind-AI_validation');
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
